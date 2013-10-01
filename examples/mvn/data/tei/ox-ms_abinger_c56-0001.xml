@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?><?xml-model href="../../derivatives/shelley-godwin-page.rnc"
+            type="application/relax-ng-compact-syntax"?><?xml-stylesheet type="text/xsl"
+            href="../../xsl/page-proof.xsl"
+        ?>
+<surface xmlns="http://www.tei-c.org/ns/1.0" xmlns:sga="http://sga.mith.org/ns/1.0"
+  xml:id="ox-ms_abinger_c56-0001" ulx="0" uly="0" lrx="5078" lry="7304" partOf="#ox-ms_abinger_c56">
+  <graphic url="../../images/ox/ox-ms_abinger_c56-0001.tif"/>
+  <zone type="library">
+    <line><del rend="strikethrough">A12</del></line>
+    <line>A 11</line>
+    <line><unclear unit="chars" extent="1"/> Autograph</line>
+    <line>__________</line>
+    <line>Part of the MS of</line>
+    <line>Frankenstein</line>
+    <line> __________</line>
+    <line>pp 64-172 (of vol I.?)</line>
+    <line>ch. 6-17</line>
+    <line>vol. II. pp 1-150</line>
+    <line>ch I-XIV</line>
+    <line>Corrections in another</line>
+    <line>hand</line>
+    <line>Dep. c. 477/1</line>
+  </zone>
+</surface>

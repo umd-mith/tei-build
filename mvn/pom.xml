@@ -1,0 +1,163 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>edu.umd.mith</groupId>
+  <artifactId>tei-maven-plugin</artifactId>
+  <packaging>maven-plugin</packaging>
+  <name>MITH TEI Maven Plugin</name>
+  <version>0.3.0-SNAPSHOT</version>
+  <inceptionYear>2012</inceptionYear>
+
+  <scm>
+    <url>https://github.com/umd-mith/tei-plugins</url>
+    <connection>scm:git:git://github.com/umd-mith/tei-plugins.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com:umd-mith/tei-plugins.git</developerConnection>
+  </scm>
+
+  <licenses>
+    <license>
+      <name>Apache 2</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <organization>
+    <name>University of Maryland, College Park</name>
+    <url>http://www.umd.edu/</url>
+  </organization>
+
+  <developers>
+    <developer>
+      <id>trbrown</id>
+      <name>Travis Brown</name>
+      <email>trbrown@umd.edu</email>
+      <organization>Maryland Institute for Technology in the Humanities</organization>
+      <organizationUrl>http://mith.umd.edu/</organizationUrl>
+      <roles>
+        <role>architect</role>
+        <role>developer</role>
+      </roles>
+    </developer>
+  </developers>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>${project.build.sourceEncoding}</project.reporting.outputEncoding>
+    <scala.version>2.10.2</scala.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-core</artifactId>
+      <version>3.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-plugin-api</artifactId>
+      <version>3.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-artifact</artifactId>
+      <version>3.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.mojo</groupId>
+      <artifactId>xml-maven-plugin</artifactId>
+      <version>1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.thaiopensource</groupId>
+      <artifactId>trang</artifactId>
+      <version>20091111</version>
+    </dependency>
+    <dependency>
+      <groupId>com.thaiopensource</groupId>
+      <artifactId>jing</artifactId>
+      <version>20091111</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+      </resource>
+      <resource>
+        <directory>${basedir}/../lib</directory>
+        <includes>
+          <include>tei/i18n.xml</include> 
+          <include>tei/common/*.xsl</include> 
+          <include>tei/html/*.xsl</include> 
+          <include>tei/odds/*.xsl</include> 
+          <include>com/schematron/stylesheets/*.xsl</include>
+        </includes>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>license-maven-plugin</artifactId>
+        <version>1.5</version>
+        <configuration>
+          <licenseName>apache_v2</licenseName>
+          <extraExtensions>
+            <scala>java</scala>
+          </extraExtensions>
+        </configuration>
+        <executions>
+          <execution>
+            <id>license-headers</id>
+            <goals>
+              <goal>update-file-header</goal>
+            </goals>
+            <phase>process-sources</phase>
+          </execution>
+          <execution>
+            <id>license-project</id>
+            <goals>
+              <goal>update-project-license</goal>
+            </goals>
+            <phase>process-sources</phase>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>net.alchim31.maven</groupId>
+        <artifactId>scala-maven-plugin</artifactId>
+        <version>3.1.5</version>
+        <configuration>
+          <recompileMode>incremental</recompileMode>
+          <useZincServer>true</useZincServer>
+          <charset>${project.build.sourceEncoding}</charset>
+          <jvmArgs>
+            <jvmArg>-Xmx1024m</jvmArg>
+          </jvmArgs>
+          <args>
+            <arg>-unchecked</arg>
+            <arg>-deprecation</arg>
+          </args> 
+        </configuration>
+        <executions>
+          <execution>
+            <id>scala-test-compile</id>
+            <goals>
+              <goal>testCompile</goal>
+            </goals>
+            <phase>test-compile</phase>
+          </execution>
+          <execution>
+            <id>scala-compile-first</id>
+            <goals>
+              <goal>add-source</goal>
+              <goal>compile</goal>
+            </goals>
+            <phase>process-resources</phase>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+

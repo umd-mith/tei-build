@@ -1,0 +1,63 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>edu.umd.mith</groupId>
+  <artifactId>tei-demo</artifactId>
+  <packaging>pom</packaging>
+  <name>MITH TEI Maven Plugin Example</name>
+  <version>0.3.0-SNAPSHOT</version>
+  <inceptionYear>2013</inceptionYear>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>${project.build.sourceEncoding}</project.reporting.outputEncoding>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>edu.umd.mith</groupId>
+        <artifactId>tei-maven-plugin</artifactId>
+        <version>0.3.0-SNAPSHOT</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>odd-schema</goal>
+              <goal>validate</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <oddSpecs>
+            <oddSpec>
+              <source>${basedir}/odds/shelley-godwin-master.odd</source>
+            </oddSpec>
+            <oddSpec>
+              <source>${basedir}/odds/shelley-godwin-page.odd</source>
+              <teiDirs>
+                <teiDir>
+                  <dir>${basedir}/data/tei/</dir>
+                  <includes>
+                    <include>*.xml</include>
+                  </includes>
+                </teiDir>
+              </teiDirs>
+            </oddSpec>
+          </oddSpecs>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>net.sf.saxon</groupId>
+            <artifactId>saxon</artifactId>
+            <version>8.7</version>
+          </dependency>
+          <dependency>
+            <groupId>net.sf.saxon</groupId>
+            <artifactId>saxon-dom</artifactId>
+            <version>8.7</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+

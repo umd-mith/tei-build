@@ -1,0 +1,9 @@
+*.db
+*.swp
+target/
+tmp/
+mvn/target/
+mvn/tmp/
+example/mvn/target/
+example/mvn/tmp/
+

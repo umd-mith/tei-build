@@ -1,0 +1,3 @@
+[submodule "lib/tei"]
+	path = lib/tei
+	url = git@github.com:TEIC/Stylesheets.git
