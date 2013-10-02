@@ -52,7 +52,7 @@ public class ValidateMojo extends ValidateGoal {
   }
 
   /**
-   * @parameter expression="${project}"
+   * @parameter property="project"
    * @required
    * @readonly
    */
@@ -62,7 +62,7 @@ public class ValidateMojo extends ValidateGoal {
    * The base directory, relative to which directory names are
    * interpreted.
    *
-   * @parameter expression="${basedir}"
+   * @parameter property="basedir"
    * @required
    * @readonly
    */
@@ -78,7 +78,7 @@ public class ValidateMojo extends ValidateGoal {
    * Transformer factory use. By default, the systems default transformer
    * factory is used.
    * <b>If you use this feature you must use at least jdk 1.6</b>
-   * @parameter expression="${xml.transformerFactory}"
+   * @parameter property="xml.transformerFactory"
    */
   private String transformerFactory;
 
