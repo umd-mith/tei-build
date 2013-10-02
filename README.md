@@ -23,9 +23,28 @@ If the creation of these artifacts can be hooked into a build process that all c
 these files do not need to be kept under version control, and every user is guaranteed to
 have up-to-date local versions.
 
+This approach also has the benefits of being platform independent,
+unlike the current command-line application,
+and of not requiring a network connection and a running server to perform ODD processing, unlike the web version.
+
 The plugins provided here are not designed to replace existing versions of Roma,
 but to provide developers with another option for creating P5-compatible schemas
 and managing validation in the project management frameworks they may already be using.
+
+Third-party Stylesheets
+-----------------------
+
+In previous versions of the TEI Maven Plugin project,
+the relevant subset of the official TEI stylesheets (which are also used by Roma, for example)
+were redistributed in the project's repository.
+Now that these files are available in a [public Git repository](https://github.com/TEIC/Stylesheets)
+they are included here as a [Git submodule](http://git-scm.com/book/en/Git-Tools-Submodules) in the `lib/tei` directory.
+This greatly simplifies the process of keeping these stylesheets up-to-date,
+and the use case is straightforward enough to avoid most of the problems associated with submodules in Git.
+
+Rick Jelliffe's "skeleton" [implementation](/home/travis/tmp/build/schematron2) of ISO Schematron is
+redistributed here for convenience (also in the `lib` directory). These files do not change often,
+and will be updated manually when they do.
 
 Projects
 --------
@@ -58,8 +77,18 @@ project for more information about how to incorporate it into your project workf
 Licensing
 ---------
 
-All code has been released under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
+All code developed for these projects has been released under the
+[Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
 Please consult the individual license files in project directories for details.
+
+Rick Jelliffe's [ISO Schematron implementation](http://www.schematron.com/implementation.html) (redistributed in this repository) is dual-licensed under the
+[Zlib License](http://opensource.org/licenses/zlib-license.php) and the
+Apache License.
+
+The TEI stylesheets (included as a Git submodule in this repository) are
+[dual-licensed](https://github.com/TEIC/Stylesheets/blob/master/LICENCE) under
+the [Creative Commons Attribution-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-sa/3.0/)
+and the [BSD 2-Clause License](http://opensource.org/licenses/BSD-2-Clause).
 
 Support
 -------
