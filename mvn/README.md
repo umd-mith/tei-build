@@ -9,13 +9,31 @@ and to validate your TEI files against these schemas along with your other tests
 Please see the TEI Build System Plugins [project description](https://github.com/umd-mith/tei-build)
 for a high-level overview of this project.
 
+Warning
+-------
+
+There are some differences in the way that Javadoc annotations for Mojos work between Maven 3.0 and 3.1,
+and since we're using 3.1 we've opted to go with the newer annotations to avoid deprecation warnings.
+This unfortunately means that the plugin will not work out of the box with 3.0. If there is interest in
+a 3.0-compatible version, the changes are minor, and we could probably be persuaded to put up with the
+warnings.
+
 Installation
 ------------
 
 First check out the TEI Build System Plugins repository:
 
 ``` bash
-git clone git@github.com:umd-mith/tei-build.git
+git clone --recursive git@github.com:umd-mith/tei-build.git
+```
+
+Note that you must include the `--recursive` flag or the Git submodule for the TEI
+stylesheets project will not be properly initialized. If you've already cloned the
+repository, you can manually check out the submodule with the following commands:
+
+``` bash
+git submodule init
+git submodule update
 ```
 
 Next navigate to this directory:
