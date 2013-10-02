@@ -118,7 +118,7 @@ derivatives and the build will fail if there are any warnings or errors.
 Examples
 --------
 
-Please see the [`examples/mvn`](https://github.com/umd-mith/tei-build/tree/master/examples)
+Please see the [`examples/mvn`](https://github.com/umd-mith/tei-build/tree/master/examples/mvn)
 directory for a complete working example.
 
 Continuous Integration
