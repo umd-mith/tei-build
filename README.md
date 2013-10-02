@@ -31,7 +31,7 @@ The plugins provided here are not designed to replace existing versions of Roma,
 but to provide developers with another option for creating P5-compatible schemas
 and managing validation in the project management frameworks they may already be using.
 
-Third-party Stylesheets
+Third-Party Stylesheets
 -----------------------
 
 In previous versions of the TEI Maven Plugin project,
@@ -71,7 +71,7 @@ A Maven-aware continuous integration system (such as [Hudson](http://hudson-ci.o
 can make the process even more efficient and convenient,
 by generating artifacts and creating validation reports without any manual intervention.
 
-Please see [the introduction](https://github.com/umd-mith/tei-build/mvn/) to the TEI Maven Plugin
+Please see [the introduction](https://github.com/umd-mith/tei-build/tree/master/mvn) to the TEI Maven Plugin
 project for more information about how to incorporate it into your project workflow.
 
 Licensing
