@@ -46,6 +46,13 @@ Rick Jelliffe's "skeleton" [implementation](/home/travis/tmp/build/schematron2) 
 redistributed here for convenience (also in the `lib` directory). These files do not change often,
 and will be updated manually when they do.
 
+Repository Structure
+--------------------
+
+All third-party stylesheets (and potentially other files) are included in the `lib` directory.
+Plugin projects live in directories with names like `mvn`, and the `example` directory holds example
+projects (currently based on ODD specifications and TEI files from the [Shelley-Godwin Archive](http://shelleygodwinarchive.org/)).
+
 Projects
 --------
 
@@ -89,6 +96,15 @@ The TEI stylesheets (included as a Git submodule in this repository) are
 [dual-licensed](https://github.com/TEIC/Stylesheets/blob/master/LICENCE) under
 the [Creative Commons Attribution-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-sa/3.0/)
 and the [BSD 2-Clause License](http://opensource.org/licenses/BSD-2-Clause).
+
+Contributors
+------------
+
+The TEI Maven Plugin was developed by [Travis Brown](https://twitter.com/travisbrown),
+[Assistant Director of Research and Development](http://mith.umd.edu/people/person/travis-brown/)
+at the [Maryland Institute for Technology in the Humanities](http://mith.umd.edu/).
+
+We welcome pull requests.
 
 Support
 -------
