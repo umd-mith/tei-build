@@ -8,9 +8,9 @@
   <inceptionYear>2012</inceptionYear>
 
   <scm>
-    <url>https://github.com/umd-mith/tei-plugins</url>
-    <connection>scm:git:git://github.com/umd-mith/tei-plugins.git</connection>
-    <developerConnection>scm:git:ssh://git@github.com:umd-mith/tei-plugins.git</developerConnection>
+    <url>https://github.com/umd-mith/tei-build</url>
+    <connection>scm:git:git://github.com/umd-mith/tei-build.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com:umd-mith/tei-build.git</developerConnection>
   </scm>
 
   <licenses>
