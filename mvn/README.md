@@ -1,35 +1,46 @@
 TEI Maven Plugin
 ================
 
-Overview
---------
+This project is a Maven plugin that provides [TEI ODD specification](http://www.tei-c.org/Guidelines/Customization/odds.xml)
+processing and validation. It allows you to create [RELAX NG](http://relaxng.org/) and [ISO Schematron](http://www.schematron.com/)
+schemas from your ODD files as part of your ordinary Maven build process,
+and to validate your TEI files against these schemas along with your other tests.
 
-This TEI Maven plugin is designed to make the process of working with ODD
-specifications easier for projects that are already using Maven as their build
-system.
+Please see the TEI Build System Plugins [project description](https://github.com/umd-mith/tei-build)
+for a high-level overview of this project.
 
-It uses and includes the [stylesheets provided by the TEI](http://www.tei-c.org/Guidelines/P5/get.xml)
-for use with [Roma](http://www.tei-c.org/Guidelines/P5/get.xml#Roma) (currently revision `r10366`).
+Installation
+------------
+
+First check out the TEI Build System Plugins repository:
+
+``` bash
+git clone git@github.com:umd-mith/tei-build.git
+```
+
+Next navigate to this directory:
+
+``` bash
+cd mvn/
+```
+
+And then build and install locally:
+
+``` bash
+mvn install
+```
+
+This may take a few minutes to download dependencies the first time you run it, but then you're done!
 
 Usage
 -----
 
-You currently first need to add the [MITH Maven repository](https://github.com/umd-mith/maven-repository)
-to your project's `pom.xml`:
-
-    <pluginRepositories>
-      <pluginRepository>
-        <id>mith-plugin-snapshots</id>
-        <url>http://umd-mith.github.com/maven-repository/snapshots</url>
-      </pluginRepository>
-    </pluginRepositories>
-
-Next add the following to the plugins section:
+Add a section like the following to the plugins section of your `pom.xml` file:
 
     <plugin>
       <groupId>edu.umd.mith</groupId>
       <artifactId>tei-maven-plugin</artifactId>
-      <version>0.1.0-SNAPSHOT</version>
+      <version>0.3.0</version>
       <executions>
         <execution>
           <goals>
@@ -68,7 +79,7 @@ and call the goals directly:
 
 The `configuration` element specifies one or more ODD files to process (and
 possibly validate against). By default the derivative schemas are added to the
-`target/generated-resources/schemas` directory. This can be changed by adding
+`target/generated-resources/schemas` directory, but this can be changed by adding
 an `outputDir` element to the `oddSpec` configuration. In this example the
 following files would be generated:
 
@@ -84,4 +95,10 @@ example above), no validation is performed. When one or more TEI directories
 are specified, the plugin will validate the files against the
 [RELAX NG](http://relaxng.org/) and [ISO Schematron](http://www.schematron.com/)
 derivatives and the build will fail if there are any warnings or errors.
+
+Continuous Integration
+----------------------
+
+If you are using a continuous integration system such as [Jenkins](http://jenkins-ci.org/),
+you will now get automatic reporting of errors in your ODD specifications or TEI files.
 
