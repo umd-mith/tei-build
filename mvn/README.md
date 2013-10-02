@@ -37,6 +37,7 @@ Usage
 
 Add a section like the following to the plugins section of your `pom.xml` file:
 
+``` xml
     <plugin>
       <groupId>edu.umd.mith</groupId>
       <artifactId>tei-maven-plugin</artifactId>
@@ -66,16 +67,34 @@ Add a section like the following to the plugins section of your `pom.xml` file:
             </teiDirs>
           </oddSpec>
         </oddSpecs>
+        <dependencies>
+          <dependency>
+            <groupId>net.sf.saxon</groupId>
+            <artifactId>saxon</artifactId>
+            <version>8.7</version>
+          </dependency>
+          <dependency>
+            <groupId>net.sf.saxon</groupId>
+            <artifactId>saxon-dom</artifactId>
+            <version>8.7</version>
+          </dependency>
+        </dependencies>
       </configuration>
     </plugin>
+```
+
+Note that you must specify the XSLT 2.0 library you wish to use in the dependencies section
+([Saxon](http://saxon.sourceforge.net/) 8.7 is a simple and convenient choice).
 
 The `executions` element binds the schema generation and validation goals to
 the appropriate project phases (`generate-resources` and `test` respectively).
 If you do not wish the goals to run automatically, you can remove this element
 and call the goals directly:
 
-    mvn tei:odd-schema
-    mvn tei:validate
+``` bash
+mvn tei:odd-schema
+mvn tei:validate
+```
 
 The `configuration` element specifies one or more ODD files to process (and
 possibly validate against). By default the derivative schemas are added to the
@@ -95,6 +114,12 @@ example above), no validation is performed. When one or more TEI directories
 are specified, the plugin will validate the files against the
 [RELAX NG](http://relaxng.org/) and [ISO Schematron](http://www.schematron.com/)
 derivatives and the build will fail if there are any warnings or errors.
+
+Examples
+--------
+
+Please see the [`examples/mvn`](https://github.com/umd-mith/tei-build/tree/master/examples)
+directory for a complete working example.
 
 Continuous Integration
 ----------------------
