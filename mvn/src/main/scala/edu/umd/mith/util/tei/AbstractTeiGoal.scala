@@ -23,9 +23,8 @@ import java.io.File
 import javax.xml.transform.Source
 import javax.xml.transform.sax.SAXSource
 import org.xml.sax.InputSource
-//import org.codehaus.mojo.xml.AbstractXmlMojo
 
-trait AbstractTeiGoal {// this: AbstractXmlMojo =>
+trait AbstractTeiGoal {
   def getOddSpecs: Array[OddSpec]
   def perform(): Unit
 
