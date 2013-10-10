@@ -9,6 +9,16 @@ and to validate your TEI files against these schemas along with your other tests
 Please see the TEI Build System Plugins [project description](https://github.com/umd-mith/tei-build)
 for a high-level overview of this project.
 
+Prerequisites
+-------------
+
+In order to run the commands below, or the commands in the TEI Maven Plugin [example project](https://github.com/umd-mith/tei-build/tree/master/examples/mvn),
+you must have [Git](http://git-scm.com/) (a distributed version control system), [Maven](http://maven.apache.org/) (a build system; version 3.1 or newer is required),
+and a [Java Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/index.html) installed.
+
+While parts of the plugin are implemented in [Scala](http://www.scala-lang.org/), you do not need to have Scala
+installed on your system, as it will be downloaded during the build process.
+
 Warning
 -------
 
