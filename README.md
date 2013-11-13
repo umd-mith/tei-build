@@ -42,7 +42,7 @@ they are included here as a [Git submodule](http://git-scm.com/book/en/Git-Tools
 This greatly simplifies the process of keeping these stylesheets up-to-date,
 and the use case is straightforward enough to avoid most of the problems associated with submodules in Git.
 
-Rick Jelliffe's "skeleton" [implementation](/home/travis/tmp/build/schematron2) of ISO Schematron is
+Rick Jelliffe's "skeleton" [implementation](https://github.com/umd-mith/tei-build/tree/master/lib/com/schematron/stylesheets) of ISO Schematron is
 redistributed here for convenience (also in the `lib` directory). These files do not change often,
 and will be updated manually when they do.
 
